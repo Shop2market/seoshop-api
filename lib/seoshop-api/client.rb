@@ -16,6 +16,7 @@ require 'seoshop-api/api/account'
 require 'seoshop-api/api/shop_script'
 require 'seoshop-api/api/shop_tracking'
 require 'seoshop-api/api/catalog'
+require 'seoshop-api/api/webhook'
 require 'seoshop-api/fetch_resource_helper'
 
 module Seoshop
@@ -32,6 +33,7 @@ module Seoshop
     include Seoshop::Tax
     include Seoshop::Catalog
     include Seoshop::FetchResourceHelper
+    include Seoshop::Webhook
 
     attr_accessor :api_key
     attr_accessor :api_secret
