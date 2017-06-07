@@ -27,7 +27,7 @@ module Seoshop
 
     def delete_webhook(id)
       response = delete("#{@shop_language}/webhooks/#{id}.json")
-      true
+      response.status == 204
     end
   end
 end
