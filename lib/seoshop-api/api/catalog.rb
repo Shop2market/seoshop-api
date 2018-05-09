@@ -5,7 +5,7 @@ module Seoshop
   module Catalog
     def get_catalog(catalog_id = nil)
       response = catalog_id.nil? ? get("#{@shop_language}/catalog.json") : get("#{@shop_language}/catalog/#{catalog_id}.json")
-      response.body ? response.body['products'] : false
+      response.body ? response.body[catalog_id.nil? ? 'products' : 'product'] : false
     end
 
     def get_catalog_count

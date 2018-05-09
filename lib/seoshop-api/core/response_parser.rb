@@ -9,6 +9,8 @@ module Seoshop
         body = false
         if env[:status] == 200
           body = env[:response].body.response || env[:response].body
+        elsif env[:status] == 204
+          body = env[:response].body
         elsif env[:status] == 401
           raise HTTPUnauthorized.new 'invalid Seoshop credentials'
         elsif env[:status] == 403
